@@ -333,8 +333,8 @@ h4 {
 }
 
 .social-icon {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -343,11 +343,8 @@ h4 {
     background: var(--bg-soft);
     transition: var(--transition-smooth);
     text-decoration: none;
-    font-size: 0.8rem;
-}
-
-.social-icon:hover {
-    transform: translateY(-3px);
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .social-icon.whatsapp {
@@ -373,7 +370,9 @@ h4 {
     border-radius: 0;
     gap: 4px;
     font-size: 1.2rem;
+    box-shadow: none;
 }
+
 .social-icon.github .git-text {
     color: #000;
     font-family: 'Inter', sans-serif;
@@ -397,7 +396,8 @@ h4 {
 }
 
 .social-icon:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     filter: brightness(1.1);
 }
 
@@ -984,6 +984,118 @@ section {
 .contact-card:hover {
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Interactive Contact Cards */
+.interactive-contact-card {
+    background: var(--bg-soft);
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.interactive-contact-card:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-front {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.card-back {
+    display: none;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.interactive-contact-card.show-back .card-front {
+    display: none;
+}
+
+.interactive-contact-card.show-back .card-back {
+    display: flex;
+    animation: fadeInCard 0.4s ease;
+}
+
+@keyframes fadeInCard {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card-back-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-back-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--dark-navy);
+}
+
+.card-back-btn {
+    background: rgba(0,0,0,0.05);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--dark-navy);
+    transition: all 0.3s ease;
+}
+
+.card-back-btn:hover {
+    background: var(--accent-orange);
+    color: white;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.card-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(0,0,0,0.03);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--dark-navy);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-action-btn i, .card-action-btn svg {
+    width: 18px;
+    height: 18px;
+    color: var(--accent-orange);
+}
+
+.card-action-btn:hover {
+    background: var(--accent-orange);
+    color: white;
+    border-color: var(--accent-orange);
+    transform: translateY(-2px);
+}
+
+.card-action-btn:hover i, .card-action-btn:hover svg {
+    color: white;
 }
 
 .contact-icon {

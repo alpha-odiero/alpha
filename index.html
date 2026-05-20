@@ -10,8 +10,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -519,25 +519,59 @@
                 <span class="section-tag">Get In Touch</span>
                 <h2 class="section-title">Let's Build Something Amazing</h2>
                 <div class="contact-cards">
-                    <div class="contact-card">
-                        <div class="contact-icon"><i data-lucide="phone"></i></div>
-                        <div class="contact-details">
-                            <h4>Call Me</h4>
-                            <p>+254 715 519 158</p>
+                    <div class="interactive-contact-card">
+                        <div class="card-front" onclick="this.parentElement.classList.add('show-back')">
+                            <div class="contact-icon"><i data-lucide="phone"></i></div>
+                            <div class="contact-details">
+                                <h4>Call Me</h4>
+                                <p>+254 715 519 158</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-back-header">
+                                <button class="card-back-btn" onclick="this.closest('.interactive-contact-card').classList.remove('show-back'); event.stopPropagation();"><i class="fa-solid fa-arrow-left"></i></button>
+                                <h4>Contact Options</h4>
+                            </div>
+                            <div class="card-actions">
+                                <a href="tel:+254715519158" class="card-action-btn"><i data-lucide="phone"></i> Direct Call</a>
+                                <a href="https://wa.me/254715519158?text=Hello%20Alpha,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" class="card-action-btn"><i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> WhatsApp</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-card">
-                        <div class="contact-icon"><i data-lucide="mail"></i></div>
-                        <div class="contact-details">
-                            <h4>Email Me</h4>
-                            <p>collinsodiera8@gmail.com</p>
+                    <div class="interactive-contact-card">
+                        <div class="card-front" onclick="this.parentElement.classList.add('show-back')">
+                            <div class="contact-icon"><i data-lucide="mail"></i></div>
+                            <div class="contact-details">
+                                <h4>Email Me</h4>
+                                <p>collinsodiera8@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-back-header">
+                                <button class="card-back-btn" onclick="this.closest('.interactive-contact-card').classList.remove('show-back'); event.stopPropagation();"><i class="fa-solid fa-arrow-left"></i></button>
+                                <h4>Send an Email</h4>
+                            </div>
+                            <div class="card-actions">
+                                <a href="mailto:collinsodiera8@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Alpha,%0A%0AI%20was%20impressed%20by%20your%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20regarding%20a%20project." class="card-action-btn"><i data-lucide="mail"></i> Compose Email</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-card">
-                        <div class="contact-icon"><i data-lucide="map-pin"></i></div>
-                        <div class="contact-details">
-                            <h4>Find Me</h4>
-                            <p>Nakuru, Bahati, Maili Saba</p>
+                    <div class="interactive-contact-card">
+                        <div class="card-front" onclick="this.parentElement.classList.add('show-back')">
+                            <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                            <div class="contact-details">
+                                <h4>Find Me</h4>
+                                <p>Nakuru, Bahati, Maili Saba</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-back-header">
+                                <button class="card-back-btn" onclick="this.closest('.interactive-contact-card').classList.remove('show-back'); event.stopPropagation();"><i class="fa-solid fa-arrow-left"></i></button>
+                                <h4>My Location</h4>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://maps.app.goo.gl/ADVG8TJtCRrFVwgk6" target="_blank" class="card-action-btn"><i data-lucide="map"></i> Open in Google Maps</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -930,8 +964,8 @@
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
-    <script src="/js/main.js"></script>
-    <script src="/js/animations.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/animations.js"></script>
 </body>
 
 </html>
