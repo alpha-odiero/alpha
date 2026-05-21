@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Project Filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const projectGalleryAction = document.querySelector('.project-gallery-action');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -41,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             const filter = btn.getAttribute('data-filter');
+
+            if (projectGalleryAction) {
+                projectGalleryAction.classList.toggle('active', filter === 'design');
+            }
 
             projectCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {

@@ -102,6 +102,50 @@
         font-size: 1.5rem;
     }
 
+    .about-grid {
+        position: static;
+    }
+
+    .about-img {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-stats-desktop {
+        display: none;
+    }
+
+    .about-stats-mobile {
+        display: flex;
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        margin-top: 0;
+        gap: 0.75rem;
+        z-index: 10;
+        justify-content: flex-end;
+    }
+
+    .about-stat-card {
+        padding: 0;
+        min-width: auto;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .about-stat-number {
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .about-stat-label {
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
     .service-card, .contact-form, .project-info {
         padding: 1.5rem !important;
     }
@@ -162,10 +206,40 @@
         justify-content: center !important;
     }
 
+    footer {
+        padding-bottom: 7rem;
+    }
+
     .social-icon {
         width: 36px;
         height: 36px;
         font-size: 1rem;
+    }
+
+    .personal-page-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .personal-page-title {
+        font-size: 2rem;
+    }
+
+    .page-back-btn {
+        width: auto !important;
+        min-width: 0;
+        padding: 0.42rem 0.75rem;
+        font-size: 0.78rem;
+        line-height: 1.1;
+        border-radius: 8px;
+    }
+
+    .personal-image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -177,6 +251,11 @@
     .btn {
         width: 100%;
         text-align: center;
+    }
+
+    .project-gallery-action .btn {
+        width: auto;
+        min-width: min(260px, 100%);
     }
 
     .hero-btns {
