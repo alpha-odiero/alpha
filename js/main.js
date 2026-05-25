@@ -1,17 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const root = document.documentElement;
+
+    function setTheme(theme) {
+        root.dataset.theme = theme;
+        try {
+            localStorage.setItem('theme', theme);
+        } catch (error) {}
+
+        themeToggles.forEach(toggle => {
+            const isDark = theme === 'dark';
+            toggle.setAttribute('aria-pressed', String(isDark));
+            toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        });
+    }
+
+    const activeTheme = root.dataset.theme || 'light';
+    setTheme(activeTheme);
+
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+        });
+    });
+
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+    const keepNavbarSolid = document.body.classList.contains('personal-page');
+
+    function updateNavbarState() {
+        if (!navbar) return;
+
+        if (keepNavbarSolid || window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
+    }
+
+    updateNavbarState();
+    window.addEventListener('scroll', updateNavbarState);
 
     // Active Navigation Highlighting
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -23,12 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
+        if (current) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        }
     });
 
     // Project Filtering

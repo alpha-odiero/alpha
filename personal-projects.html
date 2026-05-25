@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        (function () {
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem('theme');
+            } catch (error) {}
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        })();
+    </script>
 </head>
 
 <body class="personal-page">
@@ -21,7 +31,13 @@
                 <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="index.html#contact" class="nav-contact-btn">Contact</a></li>
             </ul>
-            <a href="index.html#projects" class="btn btn-outline page-back-btn">Back</a>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                    <i data-lucide="sun" class="theme-icon theme-icon-sun"></i>
+                    <i data-lucide="moon" class="theme-icon theme-icon-moon"></i>
+                </button>
+                <a href="index.html#projects" class="btn btn-outline page-back-btn">Back</a>
+            </div>
         </div>
     </nav>
 
@@ -39,6 +55,9 @@
                 <img src="images/Fulfil your safari dreams with our Kenya Safari Package! 🌍🐆.jpg" alt="Personal project">
                 <img src="images/Customer Service Week Flyer.jpg" alt="Personal project">
                 <img src="images/download (21).jpg" alt="Personal project">
+                 <img src="images/Magazine Cover Design.jpg" alt="Personal project">
+                  <img src="images/download (21).jpg" alt="Personal project">
+                   <img src="images/product.jpg" alt="Personal project">
             </div>
         </section>
     </main>
@@ -46,6 +65,7 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

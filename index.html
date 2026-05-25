@@ -89,6 +89,16 @@
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        (function () {
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem('theme');
+            } catch (error) {}
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        })();
+    </script>
 </head>
 
 <body>
@@ -108,15 +118,24 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fa-solid fa-bars"></i>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                    <i data-lucide="sun" class="theme-icon theme-icon-sun"></i>
+                    <i data-lucide="moon" class="theme-icon theme-icon-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Slide Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <button class="menu-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">Alpha Odiero</a>
+            <button class="menu-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
         <div class="mobile-menu-content">
             <ul class="mobile-nav-links">
                 <li><a href="#home">Home</a></li>
@@ -127,17 +146,13 @@
                 <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
             </ul>
         </div>
+        <div class="mobile-menu-footer">
+            <div class="status">
+                <div class="status-dot"></div>
+                Available for new projects
+            </div>
+        </div>
     </div>
-
-    <!-- Mobile Navigation (Floating Bottom) -->
-    <nav class="mobile-nav">
-        <ul>
-            <li><a href="#home" class="active"><i data-lucide="home"></i>Home</a></li>
-            <li><a href="#about"><i data-lucide="user"></i>About</a></li>
-            <li><a href="#projects"><i data-lucide="briefcase"></i>Projects</a></li>
-            <li><a href="#contact"><i data-lucide="mail"></i>Contact</a></li>
-        </ul>
-    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero map-bg map-bg-world">
@@ -194,7 +209,7 @@
                         </div>
                         <h4>Idea</h4>
                         <p>Think of a problem to solve.</p>
-                        <div class="flow-example">Example: "I want a website that helps students learn coding."</div>
+                        <div class="flow-example">"I want a website that helps students learn coding."</div>
                     </div>
                 </div>
 
@@ -415,7 +430,7 @@
                 <!-- Project: Kilimo Bora -->
                 <div class="project-card reveal" data-category="web">
                     <div class="project-img">
-                        <img src="images/land.jpg" alt="Kilimo Bora" referrerPolicy="no-referrer">
+                        <img src="images/Clean & Profitable Organic Store Web Design.jpg" alt="Kilimo Bora" referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
@@ -439,7 +454,7 @@
                 <!-- Project shishi -->
                 <div class="project-card reveal" data-category="web">
                     <div class="project-img">
-                        <img src="images/rest.jpg" alt="SecuFlow" referrerPolicy="no-referrer">
+                        <img src="images/kingstone (2).jpg" alt="SecuFlow" referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
@@ -481,21 +496,21 @@
                         </div>
                     </div>
                 </div>
-                <!-- Project: Kilimo Bora -->
+
+                <!-- Project: Sushi Restaurant -->
                 <div class="project-card reveal" data-category="web">
                     <div class="project-img">
-                        <img src="images/eco.jpg" alt="Kilimo Bora" referrerPolicy="no-referrer">
+                        <img src="images/kingstone (2).jpg" alt="Sushi Restaurant" referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="project-tag">Eco care</span>
+                            <span class="project-tag">Restaurant</span>
                             <span class="project-tag">Full-Stack</span>
                         </div>
-                        <h3>Eco care</h3>
-                        <p>A company requested for a Full-Stack web Application were they connect across the globe to
-                            save the earth and improve naturea energy.</p>
+                        <h3>Sushi Restaurant</h3>
+                        <p>A digital platform designed to help clients discover menu items and services in one place, providing a premium dining preview experience.</p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-modal="ecoDetailsModal"><i data-lucide="file-text"></i>
+                            <a href="#" class="project-link" data-modal="shushiDetailsModal"><i data-lucide="file-text"></i>
                                 View Details</a>
                             <a href="https://github.com/alpha-odiero" target="_blank" class="project-link"><i
                                     class="fa-brands fa-github"></i> GitHub</a>
@@ -507,7 +522,7 @@
                 <div class="project-card reveal" data-category="design">
                     <div class="project-img">
                         <!-- Placeholder image for Brand Identity -->
-                        <img src="images/Kryon™ - Brand Guidelines.jpg" alt="Brand Identity"
+                        <img src="images/brand.jpg" alt="Brand Identity"
                             referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
@@ -529,7 +544,7 @@
                 <div class="project-card reveal" data-category="design">
                     <div class="project-img">
                         <!-- Placeholder image for Mobile App UI -->
-                        <img src="images/Instagram (1).jpg" alt="Mobile App UI" referrerPolicy="no-referrer">
+                        <img src="images/App Brainy.jpg" alt="Mobile App UI" referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
@@ -550,7 +565,7 @@
                 <div class="project-card reveal" data-category="design">
                     <div class="project-img">
                         <!-- Placeholder image for Dashboard UX -->
-                        <img src="images/Saas Dashboard Series - Orders - S_ Datta.jpg" alt="Dashboard UX"
+                        <img src="images/dashboard.jpg" alt="Dashboard UX"
                             referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
@@ -572,7 +587,7 @@
                 <div class="project-card reveal" data-category="design">
                     <div class="project-img">
                         <!-- Placeholder image for Marketing Kit -->
-                        <img src="images/Top Digital Marketing Agency in Pakistan.jpg" alt="Marketing Kit"
+                        <img src="images/advert.jpg" alt="Marketing Kit"
                             referrerPolicy="no-referrer">
                     </div>
                     <div class="project-info">
@@ -616,9 +631,9 @@
                 <div class="project-card personal-project-card reveal" data-category="design">
                     <a href="personal-projects.html" class="personal-project-link" aria-label="Open personal projects gallery">
                         <div class="project-img personal-project-preview">
-                            <img src="images/Kryon™ - Brand Guidelines.jpg" alt="Personal project preview">
+                            <img src="images/Magazine Cover Design.jpg" alt="Personal project preview">
                             <img src="images/Instagram (1).jpg" alt="Personal project preview">
-                            <img src="images/Saas Dashboard Series - Orders - S_ Datta.jpg" alt="Personal project preview">
+                            <img src="images/Birthday flyer design.jpg" alt="Personal project preview">
                             <img src="images/Clothing Ad Flyer Design.jpg" alt="Personal project preview">
                         </div>
                         <div class="project-info">

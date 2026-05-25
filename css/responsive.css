@@ -48,6 +48,15 @@
         padding: 0.8rem 0;
     }
 
+    .nav-actions {
+        gap: 0.6rem;
+    }
+
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
     .nav-links {
         display: none;
     }
@@ -56,8 +65,8 @@
         display: block;
     }
 
-    .mobile-nav {
-        display: block;
+    .nav-socials-desktop {
+        display: none;
     }
 
     .hero-title {
@@ -204,10 +213,6 @@
 
     .footer-links .social-icons {
         justify-content: center !important;
-    }
-
-    footer {
-        padding-bottom: 7rem;
     }
 
     .social-icon {
