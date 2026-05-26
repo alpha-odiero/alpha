@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Typing Animation
     const typingElement = document.querySelector('.typing-text');
     if (typingElement) {
-        const words = ['Full-Stack Websites', 'UI/UX Designs', ' With Modern Frameworks', 'Secure& scalable softwares'];
+        const words = ['Full-Stack Websites', 'UI/UX Designs', 'Modern Frameworks', 'Secure & scalable software'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
